@@ -1,0 +1,10 @@
+const consola = require('consola');
+const app = require('../server');
+
+const { PORT } = process.env;
+const port = PORT || 3002
+const server = app.listen(port, () => {
+    consola.success(`server started at port ${port}`);
+});
+
+module.exports = server;

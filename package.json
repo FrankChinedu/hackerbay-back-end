@@ -1,0 +1,56 @@
+{
+  "name": "hackerbay-back-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "mocha --reporter dot",
+    "coverage": "nyc --reporter html --reporter text npm test",
+    "dev": "nodemon ./bin/www",
+    "start": "node ./bin/www",
+    "lint": "eslint **/*.js",
+    "lint:fix": "prettier-eslint **/**/*.{js,json} --write",
+    "prettier": "prettier **/**/*.{js,json} --write"
+  },
+  "husky": {
+    "hooks": {
+        "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:fix",
+      "npm run prettier",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrankChinedu/hackerbay-back-end.git"
+  },
+  "author": "frank",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FrankChinedu/hackerbay-back-end/issues"
+  },
+  "homepage": "https://github.com/FrankChinedu/hackerbay-back-end#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "consola": "^2.11.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "husky": "^4.2.1",
+    "mocha": "^7.0.1",
+    "nodemon": "^2.0.2",
+    "nyc": "^15.0.0",
+    "prettier-eslint": "^9.0.1",
+    "prettier-eslint-cli": "^5.0.0"
+  }
+}
