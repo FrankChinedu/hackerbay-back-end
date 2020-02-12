@@ -14,9 +14,7 @@
     "prettier": "prettier **/**/*.{js,json} --write"
   },
   "husky": {
-    "hooks": {
       "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "*.js": [
