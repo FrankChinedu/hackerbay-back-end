@@ -9,7 +9,7 @@
     "coverage": "nyc --reporter html --reporter text npm test",
     "dev": "nodemon ./bin/www",
     "start": "node ./bin/www",
-    "lint": "eslint **/*.js",
+    "lint": "eslint **/*.js --fix",
     "lint:fix": "prettier-eslint **/**/*.{js,json} --write",
     "prettier": "prettier **/**/*.{js,json} --write"
   },

@@ -1,6 +1,6 @@
 const request = require('request-promise');
-const fs = require('fs')
-const imageThumbnail = require('image-thumbnail')
+const fs = require('fs');
+const imageThumbnail = require('image-thumbnail');
 module.exports = {
     createThumbNail: async (req, res) => {
         const {body: {image_url}}  = req;

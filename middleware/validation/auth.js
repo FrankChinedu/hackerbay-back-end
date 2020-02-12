@@ -96,14 +96,14 @@ module.exports = {
     },
     thumbnail: (req, res, next) => {
         const rules = {
-            image_url: 'required|url',
+            image_url: 'required|url'
         };
 
         const data = req.body;
 
         const messages = {
             required: field => `${field} is required`,
-            'image_url.url': 'Username contains unallowed characters',
+            'image_url.url': 'Username contains unallowed characters'
         };
 
         validateAll(data, rules, messages)
