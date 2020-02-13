@@ -4,6 +4,11 @@ const Controller = require('../controller/ThumbNailController');
 
 const router = express.Router();
 
-router.post('/thumbnail',  Auth.isAuthenticated, Auth.thumbnail, Controller.createThumbNail)
+router.post(
+    '/thumbnail',
+    Auth.isAuthenticated,
+    Auth.thumbnail,
+    Controller.createThumbNail
+);
 
 module.exports = router;

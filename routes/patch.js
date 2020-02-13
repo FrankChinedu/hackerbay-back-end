@@ -4,6 +4,6 @@ const Controller = require('../controller/PatchController');
 
 const router = express.Router();
 
-router.patch('/patch',  Auth.isAuthenticated, Auth.patch, Controller.patch)
+router.patch('/patch', Auth.isAuthenticated, Auth.patch, Controller.patch);
 
 module.exports = router;

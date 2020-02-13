@@ -1,9 +1,9 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
-const Routes = require('../routes');
 const swagger = require('swagger-ui-express');
 const YAML = require('yamljs');
+const Routes = require('../routes');
 
 dotenv.config();
 
@@ -19,8 +19,10 @@ app.use(
     swagger.serve,
     swagger.setup(swaggerDocument, { explorer: true })
 );
-app.use((req, res) => res.status(404).send({
-    message: 'Not Found',
-}));
+app.use((req, res) =>
+    res.status(404).send({
+        message: 'Not Found'
+    })
+);
 
 module.exports = app;

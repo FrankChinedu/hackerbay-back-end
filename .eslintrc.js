@@ -21,7 +21,7 @@ module.exports = {
     'linebreak-style': 0,
     'one-var-declaration-per-line': 0,
     'new-cap': 0,
-    indent: ['error', "tab"],
+    indent: ['error', 4],
     'consistent-return': 0,
     'no-param-reassign': 0,
     'comma-dangle': 0,

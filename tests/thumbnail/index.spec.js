@@ -2,8 +2,6 @@ const chai = require('chai');
 const chaiHttp = require('chai-http');
 const app = require('../../server');
 const { getToken } = require('../../util');
-const mock = require('mock-require');
-const sinon = require('sinon');
 
 const { expect } = chai;
 
