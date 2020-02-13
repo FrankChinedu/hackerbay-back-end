@@ -1,0 +1,182 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Hackerbay backend
+  description: 'Hackerbay backend test'
+  contact: {}
+host: localhost:7000
+basePath: /api/v1
+schemes:
+- https
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /login:
+    post:
+      description: ''
+      summary: create a user
+      operationId: createauser
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/createauserrequest'
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /patch:
+    patch:
+      description: ''
+      summary: make a patch request
+      operationId: makeapatchrequest
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: x-access-token
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/makeapatchrequestrequest'
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /thumbnail:
+    post:
+      description: ''
+      summary: create a thumbnail
+      operationId: createathumbnail
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: x-access-token
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/createathumbnailrequest'
+      responses:
+        200:
+          description: ''
+          headers: {}
+definitions:
+  createauserrequest:
+    title: createauserrequest
+    example:
+      username: frank
+      password: '    ree88584'
+    type: object
+    properties:
+      username:
+        type: string
+      password:
+        type: string
+    required:
+    - username
+    - password
+  makeapatchrequestrequest:
+    title: makeapatchrequestrequest
+    type: object
+    properties:
+      json:
+        $ref: '#/definitions/Json'
+      patch:
+        type: array
+        items:
+          $ref: '#/definitions/Patch'
+    required:
+    - json
+    - patch
+  Json:
+    title: Json
+    example:
+      orders:
+      - id: 123
+      - id: 456
+      - id: 789
+    type: object
+    properties:
+      orders:
+        type: array
+        items:
+          $ref: '#/definitions/Order'
+    required:
+    - orders
+  Order:
+    title: Order
+    example:
+      id: 123
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+    required:
+    - id
+  Patch:
+    title: Patch
+    example:
+      op: add
+      path: /total
+      value: 20
+    type: object
+    properties:
+      op:
+        type: string
+      path:
+        type: string
+      value:
+        type: integer
+        format: int32
+    required:
+    - op
+    - path
+    - value
+  createathumbnailrequest:
+    title: createathumbnailrequest
+    example:
+      image_url: https://images.unsplash.com/photo-1457264635001-828d0cbd483e?ixlib=rb-1.2.1&dpr=2&auto=format&fit=crop&w=416&h=312&q=60
+    type: object
+    properties:
+      image_url:
+        type: string
+    required:
+    - image_url
+tags: []
