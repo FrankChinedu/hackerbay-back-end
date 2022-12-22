@@ -40,7 +40,7 @@
         "image-thumbnail": "^1.0.6",
         "indicative": "^7.4.4",
         "jsonpatch": "^3.0.1",
-        "jsonwebtoken": "^8.5.1",
+        "jsonwebtoken": "^9.0.0",
         "request": "^2.88.2",
         "request-promise": "^4.2.5",
         "swagger-ui-express": "^4.1.3",
